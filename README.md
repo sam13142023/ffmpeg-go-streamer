@@ -204,14 +204,6 @@ if err := streamer.StreamToRTMPS("input.mp4", options); err != nil {
 - **推流**: RTMPS/RTMP (FLV)
 - **文件**: MP4, AVI, MOV, MKV
 
-## 许可证
-
-MIT License
-
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
-
-## 联系
-
-如有问题，请创建 Issue 或联系项目维护者。
