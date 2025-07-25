@@ -1,4 +1,4 @@
-module ffmpeg
+module github.com/sam13142023/ffmpeg-go-streamer
 
 go 1.24.5
 
