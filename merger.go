@@ -1,4 +1,4 @@
-package ffmpeg
+package ffmpeg_go_streamer
 
 import (
     "context"

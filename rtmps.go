@@ -1,14 +1,12 @@
-package ffmpeg
+package ffmpeg_go_streamer
 
 import (
     "fmt"
     "net/url"
     "strings"
-
     "github.com/pkg/errors"
 )
 
-// RTMPSConfig RTMPS 推流配置
 type RTMPSConfig struct {
     Server     string            // RTMPS 服务器地址
     StreamKey  string            // 推流密钥
