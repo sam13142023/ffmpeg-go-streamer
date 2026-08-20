@@ -1,0 +1,27 @@
+services:
+  streamer:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      WRAPPER_ADDR: wrapper-manager:8080
+      WRAPPER_TLS: "false"
+    ports:
+      - "8088:8088"
+    volumes:
+      - streamer-output:/app/output
+      - streamer-work:/app/work
+    depends_on:
+      - wrapper-manager
+
+  wrapper-manager:
+    build: https://github.com/WorldObservationLog/wrapper-manager.git#main
+    restart: unless-stopped
+    command: ["--host", "0.0.0.0", "--port", "8080", "--mirror=false"]
+    volumes:
+      - wrapper-data:/root/data
+
+volumes:
+  streamer-output:
+  streamer-work:
+  wrapper-data:
